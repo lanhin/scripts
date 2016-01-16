@@ -1,8 +1,21 @@
 #!/bin/bash
+#
+# @2016-01  by lanhin
+#
+# Copy files(usually config files for applicaton)
+# from one node(usually the master, node1)
+# to other nodes(from node2 to node10).
+#
+# Usage: ./copy2all.sh file1 file2 file3 ... targetDir
+#
+# For example:
+#   $ ./copy2all.sh yarn-site.xml mapred-site.xml `pwd`
+#
+#
 
 VERBOSE=N
-start=2
-end=4
+start=2   # The start index of target node.
+end=10    # The end index of target node.
 
 n=$# #number of parameters, the last parameter should be the target directory
 if [ $VERBOSE = Y ]; then
