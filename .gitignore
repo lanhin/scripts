@@ -1,0 +1,9 @@
+# ignore files end by ~
+*~
+
+# ignore *.a & *.o
+*.[oa]
+
+# temp file
+*.tmp
+*.temp
