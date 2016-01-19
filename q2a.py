@@ -19,13 +19,13 @@ import sys
 import os
 
 if (len(sys.argv)) != 2:
-    print "nonon"
-    exit()
+    print "Usage: python2 q2a.py <fastq_file_name>"
+    exit(1)
 
 fqfilename=sys.argv[1]
 fafilename=fqfilename + '.fa'
 
-print fqfilename, fafilename
+print "Transforming",fqfilename,"\nOutput file:", fafilename
 
 if os.path.isfile(fafilename):
     os.remove(fafilename)
