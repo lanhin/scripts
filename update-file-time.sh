@@ -8,6 +8,8 @@
 # hello.c 2014-01-12 14:34:22
 # (Note: a newline char required at end!)
 #
+# Work on Linux, but don't work on OSX.
+#
 
 if [ $# -ne 1 ]; then
     echo "Usage: ./update-file-time.sh timefile"
