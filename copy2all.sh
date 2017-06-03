@@ -13,6 +13,11 @@
 #
 #
 
+if [ $# -lt 2 ]; then
+    echo "Usage: ./copy2all.sh file1 file2 file3 ... targetDir"
+    exit 1
+fi
+
 VERBOSE=N
 start=2   # The start index of target node.
 end=10    # The end index of target node.

@@ -19,5 +19,4 @@ All(at least most) of the scripts has useage information. Just type ```./filenam
 
 ## TODO
 
-1. Usage for ```copy2all.sh```
 2. Data file templates (under dir ```datafiles```)
