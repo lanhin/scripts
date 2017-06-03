@@ -12,6 +12,7 @@
 if [ $# -ne 3 ]; then
     echo "Usage: ./batchrun.sh  num1  num2  command"
     echo "Which num1 is the start node index while num2 is the end."
+    exit 1
 fi
 
 for i in `seq $1 $2`
