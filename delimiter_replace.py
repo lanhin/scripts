@@ -27,7 +27,7 @@ fileout = filein + '.replace'
 #print "delimiters:",csv.list_dialects()
 
 print "Input:",filein
-if (old_del == ' '):
+if (old_del == ' '): # In case there may be multiple spaces
     tmpfile = filein + '.tmp'
     if os.path.isfile(tmpfile):
         os.remove(tmpfile)
