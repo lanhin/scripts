@@ -5,7 +5,7 @@
 | File Name | Description | Example |
 | ------ | ------ | ------ |
 | batchrun.sh | Run a command in a batch of nodes. | ./batchrun.sh 1 4 ls |
-| copy2all.sh | Copy a list of files/directories into all nodes(from node1 to node10). | ./copy2all.sh yarn-site.xml mapred-site.xml `pwd` |
+| copy2all.sh | Copy a list of files/directories into all nodes(from node1 to node10). | ```./copy2all.sh yarn-site.xml mapred-site.xml `pwd` ``` |
 | delimiter_replace.py | Replace delimiter in a file. | python2 delimiter_replace.py '\t' ' ' syn.data |
 | mat2csv.py | Generate csv file from matrix format. | python2 mat2csv.py mat.data |
 | q2a.py | Transform fastq format into fasta format. | python2 q2a.py sample.fq |
