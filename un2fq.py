@@ -34,6 +34,10 @@ with open (fqfilename, 'w') as fqOut:
             line = line.replace('\n', '')
             splited = line.split('\t')
             #different ops according to different number of fields
-            outputLines = '@'+splited[0]+"/1\n"+splited[-1]+'\n'+"+\n"+splited[-1]+'\n'
+            readid = splited[0].split('/')
+            if (len(readid) <= 1):#check if there exists a direction
+                outputLines = '@'+splited[0]+"/1\n"+splited[-1]+'\n'+"+\n"+splited[-1]+'\n'
+            else:
+                outputLines = '@'+splited[0]+"\n"+splited[-1]+'\n'+"+\n"+splited[-1]+'\n'
             fqOut.write(outputLines)
 #            print splited[0]
