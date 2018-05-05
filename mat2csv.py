@@ -5,7 +5,7 @@
 
 Usage: python2 mat2csv.py <matrix>
 <matrix>:  the file stores the original matrix data.
-The output file name is <matrix>.replace
+The output file name is <matrix>.csv
 '''
 import sys
 import os
