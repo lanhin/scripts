@@ -11,15 +11,16 @@
 gzfilename="test"
 while true; do
     if [ -e $gzfilename ]; then
-	rm $gzfilename
+        rm $gzfilename
     fi
     tag=`date "+%y%m%d_%H%M"`
     tarfilename="wp$tag.tar"
     gzfilename="$tarfilename.gz"
     tar -cf $tarfilename myWordpress
     while [ $? -ne 0 ]; do
-	rm $tarfilename
-	tar -cf $tarfilename myWordpress
+        rm $tarfilename
+        sleep 60
+        tar -cf $tarfilename myWordpress
     done
     tar -czf $gzfilename $tarfilename
     rm $tarfilename
