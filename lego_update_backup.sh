@@ -22,19 +22,19 @@ backupFunc(){ #tarfile name, dir to backup
     dirtoback=$2
     gzfilename="$tarfilename.gz"
     if [ -e $gzfilename ]; then
-	    rm $gzfilename
+        rm $gzfilename
     fi
     if [ -e $tarfilename ]; then
-	    rm $tarfilename
+        rm $tarfilename
     fi
 
     echo $tarfilename
     echo $dirtoback
     tar -cf $tarfilename $dirtoback
     while [ $? -ne 0 ]; do
-	    rm $tarfilename
+        rm $tarfilename
         sleep 60
-	    tar -cf $tarfilename $dirtoback
+        tar -cf $tarfilename $dirtoback
     done
     tar -czf $gzfilename $tarfilename
     rm $tarfilename
@@ -44,15 +44,15 @@ backupFunc(){ #tarfile name, dir to backup
 while true; do
     # 0. Backup files: $myhome/gitlab and $myhome/jupyter_docker
     if [ $sleept -ge 259200 ]; then
-       sleept=`expr ${sleept} - 259200`
-       echo "Start file backup at `date`, ${sleept}"
+        sleept=`expr ${sleept} - 259200`
+        echo "Start file backup at `date`, ${sleept}"
 
-       tag=`date "+%y%m%d_%H%M"`
-       tarfilename="git$tag.tar"
-       backupFunc $tarfilename $myhome/gitlab/
+        tag=`date "+%y%m%d_%H%M"`
+        tarfilename="git$tag.tar"
+        backupFunc $tarfilename $myhome/gitlab/
 
-       tarfilename="jupyter$tag.tar"
-       backupFunc $tarfilename $myhome/jupyter_docker/
+        tarfilename="jupyter$tag.tar"
+        backupFunc $tarfilename $myhome/jupyter_docker/
     fi
 
     # 1. Get IP address
